@@ -9,7 +9,7 @@ const StyledForm = styled.form`
   gap:1rem
 `
 
-const StyledInputBox = styled.div`
+const StyledInputBox = styled.input`
   height: 45px;
   width: ${({ $cvc, $expDate }) =>
   $cvc ? '164px' : $expDate ? '72px' : '327px'};
