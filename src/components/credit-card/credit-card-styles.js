@@ -53,21 +53,39 @@ const  StyledCards = styled.div`
     align-items: flex-end;
     justify-content: center;
     padding-right: 2.1rem;
+
   }
     @media screen and (min-width: 1024px) {
-    &.front{
-    top: 0%;
-    }
-    &.back {
-    top: 100%;
+    padding:  1.5rem;
+     width: ${CREDIT_CARD_SIZE.largeWidth}px;
+     height: ${CREDIT_CARD_SIZE.largeHeight}px;
+
+     &.front{
+     top: -150px;
+     left: 90px
+     }
+
+     &.back {
+    top: 350px;
+    left: 150px;
+    padding-right: 3.5rem;
     }
 `;
+
+const StyledCardNumbers = styled.span`
+font-size: 1.125rem;
+@media screen and (min-width: 1024px){
+font-size: 1.75rem;
+}
+`
 
 const StyledDivNameAndExpDate = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   font-size: 0.5625rem;
+  @media screen and (min-width: 1024px){
+  font-size: 0.875rem;}
 `
 
-export {StyledCardsBackground, StyledCards, StyledDivNameAndExpDate}
+export {StyledCardsBackground, StyledCards, StyledCardNumbers, StyledDivNameAndExpDate}

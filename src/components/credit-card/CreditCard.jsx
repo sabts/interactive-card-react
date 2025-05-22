@@ -1,4 +1,4 @@
-import { StyledCards, StyledCardsBackground, StyledDivNameAndExpDate } from "./credit-card-styles";
+import { StyledCardNumbers, StyledCards, StyledCardsBackground, StyledDivNameAndExpDate } from "./credit-card-styles";
 
 const CreditCard = ({cardData}) => {
   return (
@@ -8,7 +8,7 @@ const CreditCard = ({cardData}) => {
           <span id="cvc">{cardData.cvc || '000'}</span>
         </StyledCards>
         <StyledCards className="front">
-          <span id="numbers">{cardData.cardNumbers || '0000 0000 0000 0000'}</span>
+          <StyledCardNumbers id="numbers">{cardData.cardNumbers || '0000 0000 0000 0000'}</StyledCardNumbers>
           <StyledDivNameAndExpDate>
             <span id="name">{cardData.name || "User Name"}</span>
             <div>
