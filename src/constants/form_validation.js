@@ -45,7 +45,7 @@ const cardNumbersValidation = {
   },
   pattern: {
     value: patterns.onlyNumbers,
-    message: messages.lastname.wrong,
+    message: messages.cardNumbers.wrong,
   },
 };
 
@@ -57,7 +57,7 @@ const monthValidation = {
   },
   pattern: {
     value: patterns.onlyNumbers,
-    message: messages.email.wrong,
+    message: messages.month.wrong,
   },
 };
 const yearValidation = {
@@ -68,15 +68,19 @@ const yearValidation = {
   },
   pattern: {
     value: patterns.onlyNumbers,
-    message: messages.email.wrong,
+    message: messages.year.wrong,
   },
 };
 
 const cvcValidation = {
   required: messages.cvc.required,
+  minLength: {
+    value: 3,
+    message: "Number is too short",
+  },
   pattern: {
     value: patterns.onlyNumbers,
-    message: messages.email.wrong,
+    message: messages.cvc.wrong,
   },
 };
 

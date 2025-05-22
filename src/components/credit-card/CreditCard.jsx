@@ -1,4 +1,5 @@
-const CreditCard = () => {
+const CreditCard = ({cardData}) => {
+  const {  name, cardNumbers, month, year, cvc } = cardData;
   return (
     <>
       <section>
@@ -6,13 +7,13 @@ const CreditCard = () => {
           <span id="cvc">cvc</span>
         </div>
         <div>
-          <span id="numbers">0000 0000 0000 0000</span>
+          <span id="numbers">{cardData.cardNumbers || '0000 0000 0000 0000'}</span>
           <div>
-            <span id="userName">User Name</span>
+            <span id="name">User Name</span>
             <div>
-              <span id="mm"> 00 </span>
+              <span id="month"> 00 </span>
               <span> / </span>
-              <span id="yy"> 00</span>
+              <span id="year"> 00</span>
             </div>
           </div>
         </div>
