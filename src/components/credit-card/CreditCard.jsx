@@ -1,11 +1,13 @@
+import { StyledCards } from "./credit-card-styles";
+
 const CreditCard = ({cardData}) => {
   return (
     <>
       <section>
-        <div>
+        <StyledCards className="back">
           <span id="cvc">{cardData.cvc || '000'}</span>
-        </div>
-        <div>
+        </StyledCards>
+        <StyledCards className="front">
           <span id="numbers">{cardData.cardNumbers || '0000 0000 0000 0000'}</span>
           <div>
             <span id="name">{cardData.name || "User Name"}</span>
@@ -15,7 +17,7 @@ const CreditCard = ({cardData}) => {
               <span id="year">{cardData.year || "00"}</span>
             </div>
           </div>
-        </div>
+          </StyledCards>
       </section>
     </>
   );
