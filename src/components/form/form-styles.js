@@ -1,16 +1,17 @@
 import styled from "styled-components";
 
 const StyledForm = styled.form`
-display: flex;
-flex-direction: column;
+ display: flex;
+ flex-direction: column;
  width: 375px;
-  padding: 1.5rem;
+ padding: 1.5rem;
+ gap:1rem
 `
 // #DFDEE0 color por default del borde
 const StyledInputBox = styled.div`
   height: 45px;
-   width: ${({ $cvc, $expDate }) =>
-    $cvc ? '164px' : $expDate ? '72px' : '327px'};
+  width: ${({ $cvc, $expDate }) =>
+  $cvc ? '164px' : $expDate ? '72px' : '327px'};
   border-radius: 6px;
   border: 1px solid ${({ $hasError }) => ($hasError ? 'red' : 'pink')};
   font-size: 1.125rem;
@@ -33,4 +34,13 @@ const StyledSmallSizeFields = styled.section`
   gap: 0.5rem;
 `
 
-export {StyledForm, StyledInputBox, StyledLabel, StyledSmallSizeFields}
+const StyledSubmitButton = styled.button`
+    background-color:  #21092F;
+    color: #fff;
+    width: 327px;
+    height: 53px;
+    border-radius: 8px;
+    border: none;
+`
+
+export {StyledForm, StyledInputBox, StyledLabel, StyledSmallSizeFields, StyledSubmitButton}

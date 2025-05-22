@@ -1,5 +1,5 @@
 import { FORM_VALIDATION } from "../../constants/form_validation";
-import { StyledForm, StyledInputBox, StyledLabel, StyledSmallSizeFields } from "./form-styles";
+import { StyledForm, StyledInputBox, StyledLabel, StyledSmallSizeFields, StyledSubmitButton } from "./form-styles";
 
 const Form = ({register, handleSubmit, formState}) => {
   const { errors } = formState;
@@ -72,7 +72,7 @@ const Form = ({register, handleSubmit, formState}) => {
              </section>
         </StyledSmallSizeFields>
 
-        <input type="submit" value="Confirm" />
+        <StyledSubmitButton>Confirm</StyledSubmitButton>
       </StyledForm >
     </>
   );
