@@ -1,20 +1,25 @@
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 import CreditCard from "../credit-card/CreditCard";
 import Form from "../form/Form";
 
-const MainPage = () => {
-  const [creditCardData, setCreditCardData] = useState({});
-  
+const MainPage = () => {  
+  const {
+      handleSubmit,
+      register, watch,
+      formState
+    } = useForm({ mode: "onChange" });
+
+    const watchAllFields = watch();
   return (
     <>
-      <CreditCard cardData={creditCardData}/>
-      <Form currentCardInformation={(data) => handleCreditCardData(data, setCreditCardData)}/>
+      <CreditCard cardData={watchAllFields} />
+      <Form 
+       register={register}
+       handleSubmit={handleSubmit}
+       formState={formState}
+       />
     </>
   );
-};
-
-const handleCreditCardData = (data, setCreditCardData) => {
-  setCreditCardData(data);
 };
 
 export default MainPage;

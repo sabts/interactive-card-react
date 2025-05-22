@@ -1,17 +1,8 @@
-import { useForm } from "react-hook-form";
 import { FORM_VALIDATION } from "../../constants/form_validation";
 
-const Form = ({currentCardInformation}) => {
-  const {
-    handleSubmit,
-    register, watch,
-    formState: { errors },
-  } = useForm({ mode: "onChange" });
-
+const Form = ({register, handleSubmit, formState}) => {
+  const { errors } = formState;
   const onSubmit = data => console.log(data);
-  const watchAllFields = watch();
-  currentCardInformation(watchAllFields);
-  
   return (
     <>
       <form id="form" autoComplete="off"  onSubmit={handleSubmit(onSubmit)}>
@@ -23,7 +14,7 @@ const Form = ({currentCardInformation}) => {
             id="name"
             {...register("name", FORM_VALIDATION.NAME)}
           />
-          {/*<span id="card-name-error">Can't be blank</span>*/}
+          {errors.name && <span>{errors.name.message}</span>}
         </section>
 
         <section>
@@ -34,7 +25,7 @@ const Form = ({currentCardInformation}) => {
             id="cardNumbers"
             {...register("cardNumbers", FORM_VALIDATION.CARDNUMBERS)}
           />
-          {/*<span id="card-name-error">Can't be blank</span>*/}
+          {errors.cardNumbers && <span>{errors.cardNumbers.message}</span>}
         </section>
 
         <section>
@@ -55,7 +46,9 @@ const Form = ({currentCardInformation}) => {
                   {...register("year", FORM_VALIDATION.YEAR)}
               />
             </div>
-            {/*<span id="card-name-error">Can't be blank</span>*/}
+            {(errors.month || errors.year) && (
+            <span>{errors.month?.message || errors.year?.message}</span>
+            )}
           </section>
 
           <section>
@@ -66,7 +59,7 @@ const Form = ({currentCardInformation}) => {
               id="cvc"
                 {...register("cvc", FORM_VALIDATION.CVC)}
             />
-            {/*<span id="card-name-error">Can't be blank</span>*/}
+             {errors.cvc && <span>{errors.cvc.message}</span>}
           </section>
         </section>
 
