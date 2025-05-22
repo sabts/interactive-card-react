@@ -1,5 +1,5 @@
 import { FORM_VALIDATION } from "../../constants/form_validation";
-import { StyledForm, StyledInputBox, StyledLabel, StyledSmallSizeFields, StyledSubmitButton } from "./form-styles";
+import { StyledErrorText, StyledForm, StyledInputBox, StyledLabel, StyledSmallSizeFields, StyledSubmitButton } from "./form-styles";
 
 const Form = ({register, handleSubmit, formState}) => {
   const { errors } = formState;
@@ -16,7 +16,7 @@ const Form = ({register, handleSubmit, formState}) => {
             $hasError={errors.name}
             {...register("name", FORM_VALIDATION.NAME)}
           />
-          {errors.name && <span>{errors.name.message}</span>}
+          {errors.name && <StyledErrorText>{errors.name.message}</StyledErrorText>}
         </section>
 
         <section>
@@ -28,7 +28,7 @@ const Form = ({register, handleSubmit, formState}) => {
             $hasError={errors.name}
             {...register("cardNumbers", FORM_VALIDATION.CARDNUMBERS)}
           />
-          {errors.cardNumbers && <span>{errors.cardNumbers.message}</span>}
+          {errors.cardNumbers && <StyledErrorText>{errors.cardNumbers.message}</StyledErrorText>}
         </section>
 
         <StyledSmallSizeFields>
@@ -54,7 +54,7 @@ const Form = ({register, handleSubmit, formState}) => {
               />
             </StyledSmallSizeFields>
             {(errors.month || errors.year) && (
-            <span>{errors.month?.message || errors.year?.message}</span>
+            <StyledErrorText>{errors.month?.message || errors.year?.message}</StyledErrorText>
             )}
           </section>
 
@@ -68,7 +68,7 @@ const Form = ({register, handleSubmit, formState}) => {
               $hasError={errors.name}
                 {...register("cvc", FORM_VALIDATION.CVC)}
             />
-             {errors.cvc && <span>{errors.cvc.message}</span>}
+             {errors.cvc && <StyledErrorText>{errors.cvc.message}</StyledErrorText>}
              </section>
         </StyledSmallSizeFields>
 
