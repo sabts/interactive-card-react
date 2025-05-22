@@ -2,7 +2,15 @@ import styled from "styled-components";
 import { CREDIT_CARD_PHOTO } from "../../styles/credit-card-photo";
 import { CREDIT_CARD_SIZE } from "../../styles/credit-card-size";
 
+const StyledCardsBackground = styled.section`
+  background: url(${CREDIT_CARD_PHOTO.backgroundMobile});
+  background-repeat: no-repeat;
 
+   @media screen and (min-width: 1024px) {
+   background: url(${CREDIT_CARD_PHOTO.backgroundDesktop});
+   position: sticky;
+   }
+`
 const  StyledCards = styled.div`
   color: #fff;
   display: flex;
@@ -39,13 +47,27 @@ const  StyledCards = styled.div`
     position: relative;
     top: 32px;
     left: 73px;
-   background-image: url(${CREDIT_CARD_PHOTO.cardBack});
+    background-image: url(${CREDIT_CARD_PHOTO.cardBack});
     background-repeat: no-repeat;
     background-size: contain;
     align-items: flex-end;
     justify-content: center;
     padding-right: 2.1rem;
   }
+    @media screen and (min-width: 1024px) {
+    &.front{
+    top: 0%;
+    }
+    &.back {
+    top: 100%;
+    }
 `;
 
-export {StyledCards}
+const StyledDivNameAndExpDate = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.5625rem;
+`
+
+export {StyledCardsBackground, StyledCards, StyledDivNameAndExpDate}
