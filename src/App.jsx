@@ -5,8 +5,7 @@ const App = () => {
   return (
     <>
       <GlobalStyles />
-      <h1>Template React</h1>
-      <Button />
+      <MainPage />
     </>
   );
 };
