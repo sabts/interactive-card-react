@@ -27,7 +27,7 @@ const CreditCard = ({cardData}) => {
 
 const formatCardNumber = (cardNumbers) => {
   if (!cardNumbers) return "";
-  return cardNumbers.match(/\d{1,4}/g)?.join(" ") || ""; 
+  return cardNumbers.match(/\d{1,4}/g)?.join(" "); 
 };
 
 
