@@ -6,12 +6,13 @@ const StyledCardsBackground = styled.section`
   background: url(${CREDIT_CARD_PHOTO.backgroundMobile});
   background-repeat: no-repeat;
 
-   @media screen and (min-width: 1024px) {
-   background: url(${CREDIT_CARD_PHOTO.backgroundDesktop});
-   position: sticky;
-   }
-`
-const  StyledCards = styled.div`
+  @media screen and (min-width: 1024px) {
+    background: url(${CREDIT_CARD_PHOTO.backgroundDesktop});
+    position: sticky;
+  }
+`;
+
+const StyledCards = styled.div`
   color: #fff;
   display: flex;
   align-items: flex-start;
@@ -20,72 +21,74 @@ const  StyledCards = styled.div`
   padding: 0.6rem;
   width: ${CREDIT_CARD_SIZE.smallWidth}px;
   height: ${CREDIT_CARD_SIZE.smallHeight}px;
+`;
 
-  &.front {
+const StyledFrontCard = styled(StyledCards)`
+  position: relative;
+  top: -36px;
+  left: 17px;
+  background-image: url(${CREDIT_CARD_PHOTO.cardFront});
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-items: flex-start;
+  justify-content: space-around;
+
+  &::before {
+    content: "";
     position: relative;
-    top: -36px;
-    left: 17px;
-    background-image: url(${CREDIT_CARD_PHOTO.cardFront});
+    width: 54px;
+    height: 30px;
+    background-image: url(${CREDIT_CARD_PHOTO.logo});
     background-repeat: no-repeat;
     background-size: contain;
-    align-items: flex-start;
-    justify-content: space-around;
-
-    &::before {
-      content: "";
-      position: relative;
-      width: 54px;
-      height: 30px;
-      background-image: url(${CREDIT_CARD_PHOTO.logo});
-      background-repeat: no-repeat;
-      background-size: contain;
-      display: block;
-    }
+    display: block;
   }
 
-  &.back {
-    position: relative;
-    top: 32px;
-    left: 73px;
-    background-image: url(${CREDIT_CARD_PHOTO.cardBack});
-    background-repeat: no-repeat;
-    background-size: contain;
-    align-items: flex-end;
-    justify-content: center;
-    padding-right: 2.1rem;
-
+  @media screen and (min-width: 1024px) {
+    top: -150px;
+    left: 90px;
   }
-    @media screen and (min-width: 1024px) {
-    padding:  1.5rem;
-     width: ${CREDIT_CARD_SIZE.largeWidth}px;
-     height: ${CREDIT_CARD_SIZE.largeHeight}px;
+`;
 
-     &.front{
-     top: -150px;
-     left: 90px
-     }
+const StyledBackCard = styled(StyledCards)`
+  position: relative;
+  top: 32px;
+  left: 73px;
+  background-image: url(${CREDIT_CARD_PHOTO.cardBack});
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-items: flex-end;
+  justify-content: center;
+  padding-right: 2.1rem;
 
-     &.back {
+  @media screen and (min-width: 1024px) {
     top: 350px;
     left: 150px;
     padding-right: 3.5rem;
-    }
+  }
 `;
 
 const StyledCardNumbers = styled.span`
-font-size: 1.125rem;
-@media screen and (min-width: 1024px){
-font-size: 1.75rem;
-}
-`
+  font-size: 1.125rem;
+  @media screen and (min-width: 1024px) {
+    font-size: 1.75rem;
+  }
+`;
 
 const StyledDivNameAndExpDate = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
   font-size: 0.5625rem;
-  @media screen and (min-width: 1024px){
-  font-size: 0.875rem;}
-`
+  @media screen and (min-width: 1024px) {
+    font-size: 0.875rem;
+  }
+`;
 
-export {StyledCardsBackground, StyledCards, StyledCardNumbers, StyledDivNameAndExpDate}
+export {
+  StyledCardsBackground,
+  StyledFrontCard,
+  StyledBackCard,
+  StyledCardNumbers,
+  StyledDivNameAndExpDate,
+};

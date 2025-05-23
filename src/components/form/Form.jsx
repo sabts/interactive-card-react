@@ -72,7 +72,7 @@ const Form = ({register, handleSubmit, formState}) => {
              </section>
         </StyledSmallSizeFields>
 
-        <StyledSubmitButton>Confirm</StyledSubmitButton>
+        <StyledSubmitButton type="submit" value="Confirm"/>
       </StyledForm >
     </>
   );

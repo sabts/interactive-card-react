@@ -40,7 +40,7 @@ const StyledSmallSizeFields = styled.section`
   gap: 0.5rem;
 `
 
-const StyledSubmitButton = styled.button`
+const StyledSubmitButton = styled.input`
   background-color:${COLORS.secondaryColor};
   color: #fff;
   width: 327px;

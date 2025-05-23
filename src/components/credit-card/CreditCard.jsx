@@ -1,14 +1,17 @@
-import { StyledCardNumbers, StyledCards, StyledCardsBackground, StyledDivNameAndExpDate } from "./credit-card-styles";
+import { StyledBackCard, StyledCardNumbers, StyledDivNameAndExpDate, StyledFrontCard } from "./credit-card-styles";
 
 const CreditCard = ({cardData}) => {
+
+  const formattedCardNumber = formatCardNumber(cardData.cardNumbers);
+
   return (
     <>
       <section>
-        <StyledCards className="back">
+        <StyledBackCard>
           <span id="cvc">{cardData.cvc || '000'}</span>
-        </StyledCards>
-        <StyledCards className="front">
-          <StyledCardNumbers id="numbers">{cardData.cardNumbers || '0000 0000 0000 0000'}</StyledCardNumbers>
+        </StyledBackCard >
+        <StyledFrontCard>
+          <StyledCardNumbers id="numbers">{ formattedCardNumber || '0000 0000 0000 0000'}</StyledCardNumbers>
           <StyledDivNameAndExpDate>
             <span id="name">{cardData.name || "User Name"}</span>
             <div>
@@ -17,10 +20,16 @@ const CreditCard = ({cardData}) => {
               <span id="year">{cardData.year || "00"}</span>
             </div>
             </StyledDivNameAndExpDate>
-          </StyledCards>
+          </StyledFrontCard>
       </section>
     </>
   );
 };
+
+const formatCardNumber = (cardNumbers) => {
+  if (!cardNumbers) return;
+  return cardNumbers.match(/\d{1,4}/g).join(" ");
+};
+
 
 export default CreditCard;
