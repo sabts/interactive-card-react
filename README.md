@@ -50,7 +50,7 @@ Por último, aunque utilicé styled-components para los estilos, me di cuenta de
 
 ## Autor ✒️
 
-**TU NOMBRE**
+Sabrina Taraschi
 
 <ul>
     <li>
