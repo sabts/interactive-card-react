@@ -64,7 +64,7 @@ Por último, aunque utilicé styled-components para los estilos, me di cuenta de
     </li>
 </ul>
 
-## Link del reto (si es público)
+## Link del reto
 
 <a href="https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw">Página de frontendmentor</a>
 
