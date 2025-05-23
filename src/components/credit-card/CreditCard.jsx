@@ -1,7 +1,6 @@
 import { StyledBackCard, StyledCardNumbers, StyledDivNameAndExpDate, StyledFrontCard } from "./credit-card-styles";
 
 const CreditCard = ({cardData}) => {
-
   const formattedCardNumber = formatCardNumber(cardData.cardNumbers);
 
   return (
@@ -27,8 +26,8 @@ const CreditCard = ({cardData}) => {
 };
 
 const formatCardNumber = (cardNumbers) => {
-  if (!cardNumbers) return;
-  return cardNumbers.match(/\d{1,4}/g).join(" ");
+  if (!cardNumbers) return "";
+  return cardNumbers.match(/\d{1,4}/g)?.join(" ") || ""; 
 };
 
 
